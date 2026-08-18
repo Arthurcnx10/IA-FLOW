@@ -1,0 +1,246 @@
+// ==========================================
+// FLOW AI V2
+// SCRIPT COMPLETO
+// ==========================================
+
+// ==========================================
+// ELEMENTOS DO HTML
+// ==========================================
+
+const chatBox = document.getElementById("chatBox");
+const input = document.getElementById("pergunta");
+const botao = document.getElementById("enviar");
+
+
+// ==========================================
+// BANCO DE RESPOSTAS
+// ==========================================
+
+
+
+    const respostas = {
+
+    // ==========================================
+    // 🏙️ HISTÓRIA DO HIP HOP
+    // ==========================================
+
+    "O que é Hip Hop?":
+        "Hip Hop é um movimento cultural que surgiu no Bronx, em Nova York, durante a década de 1970. Ele nasceu em comunidades principalmente negras e latinas e se tornou uma forma de expressão artística, social e política. Tradicionalmente, o Hip Hop é associado a quatro elementos principais: DJing, MCing, Breaking e Graffiti. Com o passar do tempo, a cultura também passou a envolver moda, linguagem, produção musical, conhecimento, dança e diversas outras formas de expressão.",
+
+    "Onde surgiu o Hip Hop?":
+        "O Hip Hop surgiu no Bronx, um bairro de Nova York, nos Estados Unidos. Durante as décadas de 1960 e 1970, o Bronx enfrentava problemas sociais e econômicos, incluindo pobreza, abandono urbano e conflitos entre grupos. Jovens negros e latinos começaram a utilizar festas de rua, música, dança, arte e rimas como formas de expressão. Essas práticas ajudaram a formar a cultura Hip Hop que conhecemos atualmente.",
+
+    "Quando surgiu o Hip Hop?":
+        "O Hip Hop surgiu durante a década de 1970, no Bronx, em Nova York. Uma data frequentemente associada ao nascimento do movimento é 11 de agosto de 1973, quando DJ Kool Herc realizou uma festa no edifício 1520 Sedgwick Avenue. Durante a festa, ele utilizou dois toca-discos para prolongar os breaks instrumentais das músicas, permitindo que os dançarinos permanecessem mais tempo dançando. Essa técnica se tornou uma das bases do DJing do Hip Hop.",
+
+    "Quem criou o Hip Hop?":
+        "O Hip Hop não foi criado por uma única pessoa. Ele surgiu gradualmente a partir das experiências e criações de várias comunidades do Bronx. DJ Kool Herc é considerado um dos principais pioneiros do movimento por suas festas e técnicas de DJ. Afrika Bambaataa ajudou a organizar e expandir a cultura, enquanto Grandmaster Flash desenvolveu técnicas importantes de discotecagem. Além deles, inúmeros DJs, MCs, dançarinos, artistas de graffiti e moradores do Bronx contribuíram para o nascimento do Hip Hop.",
+
+    "Quem é DJ Kool Herc?":
+        "DJ Kool Herc, nascido Clive Campbell, é um DJ jamaicano-americano considerado um dos pioneiros fundamentais do Hip Hop. Ele ficou conhecido por suas festas no Bronx durante a década de 1970. Uma de suas principais contribuições foi utilizar dois toca-discos para alternar entre os breaks instrumentais das músicas, prolongando essas partes para que os dançarinos pudessem continuar dançando. Essa técnica ajudou a estabelecer uma das bases do DJing no Hip Hop.",
+
+    "Quem é Afrika Bambaataa?":
+        "Afrika Bambaataa é um dos principais pioneiros da cultura Hip Hop. Nascido Kevin Donovan, ele atuou como DJ e organizador cultural no Bronx. Em 1973, fundou a Universal Zulu Nation, uma organização que buscava promover a cultura Hip Hop e incentivar alternativas à violência entre jovens. Bambaataa também ajudou a popularizar a ideia de que o Hip Hop era mais do que música, envolvendo dança, arte, DJing, conhecimento e transformação social.",
+
+    "Quais são os elementos do Hip Hop?":
+        "Tradicionalmente, os quatro elementos mais associados ao Hip Hop são DJing, MCing, Breaking e Graffiti. O DJ trabalha com músicas, batidas, samples e técnicas de mixagem. O MC utiliza rimas, versos e performance vocal para se comunicar com o público. O Breaking é uma dança caracterizada por movimentos no chão, giros, passos e grande criatividade corporal. O Graffiti utiliza letras, desenhos e pinturas como forma de expressão visual. Além desses quatro elementos, o conhecimento e outras manifestações culturais também são importantes dentro do Hip Hop.",
+
+    "Qual a diferença entre Rap e Hip Hop?":
+        "Rap e Hip Hop não são exatamente a mesma coisa. O Rap é uma forma musical baseada principalmente em rimas, ritmo, flow e performance vocal. Já o Hip Hop é uma cultura muito mais ampla, que tradicionalmente envolve DJing, MCing, Breaking e Graffiti, além de moda, linguagem, arte e expressão social. Portanto, o Rap faz parte da cultura Hip Hop, mas Hip Hop não significa apenas Rap.",
+
+
+    // ==========================================
+    // 🎤 RAP E CULTURA
+    // ==========================================
+
+    "O que é Rap?":
+        "Rap é uma forma de expressão musical baseada principalmente em rimas, ritmo e palavras organizadas sobre uma batida. O MC pode utilizar diferentes flows, métricas, técnicas de rima e formas de contar histórias. As letras podem abordar experiências pessoais, relacionamentos, problemas sociais, política, desigualdade, violência, identidade, diversão e diversos outros temas. O Rap se desenvolveu dentro da cultura Hip Hop e posteriormente se tornou um dos gêneros musicais mais populares do mundo.",
+
+    "O que é MC?":
+        "MC significa Master of Ceremonies, ou Mestre de Cerimônias. Na cultura Hip Hop, o MC é responsável por utilizar a voz para rimar, apresentar ideias, contar histórias e interagir com o público. Com o desenvolvimento do Rap, o termo passou a ser associado principalmente aos rappers. Um MC pode utilizar diferentes técnicas de rima, métrica, improvisação, storytelling e flow para construir sua performance.",
+
+    "O que é Flow?":
+        "Flow é a maneira como um rapper organiza e entrega suas palavras em relação ao ritmo e à batida da música. Ele envolve elementos como velocidade, pausas, acentuação, métrica, respiração e escolha de palavras. Dois rappers podem utilizar a mesma batida e produzir flows completamente diferentes. Por isso, o flow é uma das características que ajudam a construir a identidade de um MC.",
+
+    "O que é Freestyle?":
+        "Freestyle é uma forma de improvisação dentro do Rap em que o MC cria rimas e versos no momento, normalmente acompanhando uma batida. O objetivo pode ser demonstrar criatividade, capacidade de improvisação, domínio das rimas e rapidez de pensamento. Freestyles podem acontecer individualmente ou em batalhas de MCs, nas quais os participantes improvisam versos uns contra os outros.",
+
+    "O que é Graffiti?":
+        "Graffiti é uma forma de arte urbana que utiliza paredes, muros, trens e outros espaços para criar letras, personagens, desenhos e mensagens. Dentro da cultura Hip Hop, o graffiti se desenvolveu como uma importante forma de expressão visual. Os artistas podem utilizar diferentes estilos, incluindo tags, throw-ups, pieces e murais. Além da estética, o graffiti também pode representar identidade, território, crítica social e criatividade.",
+
+    "O que é Breakdance?":
+        "Breaking, muitas vezes chamado de breakdance, é uma dança que surgiu no Bronx durante o desenvolvimento inicial da cultura Hip Hop. A dança combina movimentos realizados em pé e no chão, footwork, freezes, giros e movimentos acrobáticos. Os dançarinos, conhecidos como B-boys e B-girls, desenvolvem estilos próprios e podem competir em batalhas. O Breaking também se tornou uma modalidade olímpica, estreando nos Jogos Olímpicos de Paris 2024.",
+
+
+    // ==========================================
+    // 🎧 EMINEM
+    // ==========================================
+
+    "Quem é Eminem?":
+        "Eminem, cujo nome verdadeiro é Marshall Bruce Mathers III, é um rapper, compositor e produtor musical americano. Ele nasceu em 17 de outubro de 1972, em St. Joseph, Missouri, e cresceu principalmente em Detroit, Michigan. Eminem começou a ganhar destaque na cena underground de Detroit antes de alcançar reconhecimento internacional. Ele ficou conhecido por sua habilidade técnica com rimas, diferentes flows, velocidade, storytelling e letras que frequentemente exploram experiências pessoais e temas controversos. Seu sucesso ajudou a aumentar ainda mais a popularidade do Rap mundialmente.",
+
+    "Quem é Dr. Dre?":
+        "Dr. Dre, cujo nome verdadeiro é Andre Romell Young, é um rapper, produtor musical e empresário americano. Ele foi uma das figuras fundamentais do desenvolvimento do Gangsta Rap e do West Coast Hip Hop. Como produtor, ajudou a popularizar o G-funk e trabalhou com diversos artistas importantes. Dr. Dre também teve papel fundamental na carreira de Eminem depois de conhecer suas músicas e assinar com ele pela Aftermath Entertainment. A parceria entre os dois se tornou uma das mais importantes da história do Rap.",
+
+    "Qual foi o primeiro álbum de Eminem?":
+        "O primeiro álbum de estúdio de Eminem foi Infinite, lançado em 1996. O álbum foi produzido principalmente por D12 e outros colaboradores da cena de Detroit e apresentou um estilo de Rap diferente daquele que posteriormente tornou Eminem mundialmente conhecido. Infinite teve pouca repercussão comercial na época. Depois dele, Eminem desenvolveu uma identidade artística mais agressiva e ganhou destaque através de projetos independentes e apresentações na cena underground de Detroit.",
+
+    "Qual é o álbum mais famoso do Eminem?":
+        "Um dos álbuns mais famosos e influentes de Eminem é The Marshall Mathers LP, lançado em 2000. O álbum teve enorme sucesso comercial e crítico e ajudou a consolidar Eminem como uma das maiores estrelas do Rap. O projeto apresentou músicas como The Real Slim Shady, Stan e The Way I Am. Seu sucesso também fez com que Eminem se tornasse uma das figuras mais reconhecidas da música popular no início dos anos 2000.",
+
+    "Qual a relação entre Dr. Dre e Eminem?":
+        "Dr. Dre teve um papel fundamental na carreira de Eminem. Depois de conhecer uma gravação de Eminem, Dre ficou impressionado com sua habilidade como rapper e decidiu trabalhar com ele. Eminem assinou com a Aftermath Entertainment, selo associado a Dr. Dre. Dre produziu e participou de várias músicas de Eminem e ajudou a apresentar seu trabalho para um público muito maior. A parceria entre os dois se tornou uma das mais conhecidas da história do Hip Hop.",
+
+    "Quem foi Tupac?":
+        "Tupac Shakur, conhecido artisticamente como 2Pac, foi um dos rappers mais influentes da história do Hip Hop. Nascido em 1971, ele construiu uma carreira marcada por letras que abordavam desigualdade social, pobreza, violência, racismo, relações pessoais e experiências de sua própria vida. Tupac também era ator e poeta. Entre seus trabalhos mais conhecidos estão os álbuns All Eyez on Me e Me Against the World. Ele morreu em 1996, aos 25 anos, depois de ser baleado em Las Vegas. Sua influência continua presente na música, na cultura e na sociedade."
+}
+
+
+// ==========================================
+// NORMALIZAR TEXTO
+// ==========================================
+
+function normalizar(texto) {
+
+    return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[?!.,;:()"'`]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
+
+
+// ==========================================
+// ADICIONAR MENSAGEM NO CHAT
+// ==========================================
+
+function adicionarMensagem(texto, classe) {
+
+    const mensagem = document.createElement("div");
+
+    mensagem.className = "message " + classe;
+
+    mensagem.textContent = texto;
+
+    chatBox.appendChild(mensagem);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+}
+
+
+// ==========================================
+// ENCONTRAR RESPOSTA
+// ==========================================
+
+function encontrarResposta(pergunta) {
+
+    const perguntaNormalizada = normalizar(pergunta);
+
+    // Procura entre todas as perguntas do banco
+    for (const perguntaBanco in respostas) {
+
+        const perguntaBancoNormalizada = normalizar(perguntaBanco);
+
+        if (perguntaBancoNormalizada === perguntaNormalizada) {
+
+            return respostas[perguntaBanco];
+
+        }
+
+    }
+
+    return null;
+
+}
+
+
+// ==========================================
+// RESPONDER
+// ==========================================
+
+function responder() {
+
+    const pergunta = input.value.trim();
+
+    // Não envia mensagem vazia
+    if (pergunta === "") {
+        return;
+    }
+
+
+    // ===============================
+    // MENSAGEM DO USUÁRIO
+    // ===============================
+
+    adicionarMensagem(pergunta, "user");
+
+
+    // ===============================
+    // PROCURAR RESPOSTA
+    // ===============================
+
+    const respostaEncontrada = encontrarResposta(pergunta);
+
+    let resposta;
+
+
+    if (respostaEncontrada) {
+
+        resposta = respostaEncontrada;
+
+    } else {
+
+        resposta =
+            "Ainda estou aprendendo sobre esse assunto. Tente fazer uma das perguntas disponíveis no banco do Flow IA.";
+
+    }
+
+
+    // ===============================
+    // RESPOSTA DA IA
+    // ===============================
+
+    setTimeout(function () {
+
+        adicionarMensagem(resposta, "ai");
+
+    }, 400);
+
+
+    // ===============================
+    // LIMPAR INPUT
+    // ===============================
+
+    input.value = "";
+
+    input.focus();
+
+}
+
+
+// ==========================================
+// BOTÃO ENVIAR
+// ==========================================
+
+botao.addEventListener("click", responder);
+
+
+// ==========================================
+// TECLA ENTER
+// ==========================================
+
+input.addEventListener("keydown", function (e) {
+
+    if (e.key === "Enter") {
+
+        e.preventDefault();
+
+        responder();
+
+    }
+
+});

@@ -1,0 +1,977 @@
+/* ==========================================
+   FLOW AI V2
+   STREET HIP HOP / NEON PURPLE
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #050008;
+
+    color: white;
+}
+
+
+/* ==========================================
+   FUNDO STREET NEON
+========================================== */
+
+.background {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(3, 0, 8, 0.45),
+            rgba(25, 0, 40, 0.20),
+            rgba(3, 0, 8, 0.45)
+        ),
+
+        url("IMG/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* ==========================================
+   BRILHO ROXO SOBRE O FUNDO
+========================================== */
+
+.background::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(170, 0, 255, 0.30),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(100, 0, 255, 0.25),
+            transparent 35%
+        );
+
+}
+
+
+/* ==========================================
+   GRADE NEON
+========================================== */
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.07;
+
+    background-image:
+
+        linear-gradient(
+            rgba(180, 0, 255, 0.4) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(180, 0, 255, 0.4) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+}
+
+
+/* ==========================================
+   CONTAINER PRINCIPAL
+========================================== */
+
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 92%;
+
+    max-width: 1400px;
+
+    height: 88vh;
+
+    display: flex;
+
+    background:
+        rgba(5, 2, 10, 0.35);
+
+    border:
+        2px solid
+        rgba(141, 25, 255, 0.9);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(160, 0, 255, 0.45),
+
+        0 0 70px
+        rgba(100, 0, 255, 0.20);
+
+    backdrop-filter: blur(4px);
+
+}
+
+
+/* ==========================================
+   PAINEL ESQUERDO
+========================================== */
+
+.left-panel {
+
+    width: 38%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(10, 0, 18, 0.25),
+            rgba(3, 0, 8, 0.45)
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   BRILHO ATRÁS DO MASCOTE
+========================================== */
+
+.glow {
+
+    position: absolute;
+
+    width: 390px;
+
+    height: 390px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(170, 0, 255, 0.55),
+            rgba(100, 0, 180, 0.20),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    opacity: 0.8;
+
+    animation:
+        glowPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes glowPulse {
+
+    0% {
+        transform: scale(0.92);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(0.92);
+        opacity: 0.55;
+    }
+
+}
+
+
+/* ==========================================
+   MASCOTE
+========================================== */
+
+.mascote {
+
+    width: 78%;
+
+    max-width: 300px;
+
+    max-height: 50vh;
+
+    display: block;
+
+    object-fit: contain;
+
+    margin: 5px auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    filter:
+
+        drop-shadow(
+            0 0 10px
+            rgba(170, 0, 255, 0.9)
+        )
+
+        drop-shadow(
+            0 0 30px
+            rgba(120, 0, 255, 0.55)
+        );
+
+    animation:
+        flutuar 3s ease-in-out infinite;
+
+}
+
+
+@keyframes flutuar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   LOGO FLOW AI
+========================================== */
+
+.left-panel h1 {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 5px;
+
+    font-family:
+        Impact,
+        "Arial Black",
+        Arial,
+        sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    letter-spacing: 4px;
+
+    color: white;
+
+    transform: rotate(-3deg);
+
+    text-transform: uppercase;
+
+    text-shadow:
+
+        3px 3px 0 #28003d,
+
+        5px 5px 0 #110018,
+
+        0 0 8px #a900ff,
+
+        0 0 18px #a900ff,
+
+        0 0 35px rgba(150, 0, 255, 0.85);
+
+}
+
+
+/* ==========================================
+   SUBTÍTULO
+========================================== */
+
+.subtitle {
+
+    position: relative;
+
+    z-index: 3;
+
+    color: #d5b9df;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 17px;
+
+    color: #e9e0ee;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+}
+
+
+.online {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #00ff66;
+
+    box-shadow:
+
+        0 0 8px #00ff66,
+
+        0 0 18px #00ff66;
+
+}
+
+
+/* ==========================================
+   ÍCONES
+========================================== */
+
+.icons {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 18px;
+
+    display: flex;
+
+    gap: 25px;
+
+    font-size: 25px;
+
+    filter:
+        drop-shadow(0 0 8px #8d19ff);
+
+}
+
+
+/* ==========================================
+   PAINEL DIREITO
+========================================== */
+
+.right-panel {
+
+    width: 62%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(12, 5, 18, 0.72),
+            rgba(5, 2, 10, 0.82)
+        );
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.right-panel .header {
+
+    margin-bottom: 20px;
+
+}
+
+
+.right-panel h2 {
+
+    color: white;
+
+    font-family:
+        Impact,
+        "Arial Black",
+        Arial,
+        sans-serif;
+
+    font-size: 36px;
+
+    font-style: italic;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+
+        0 0 8px #8d19ff,
+
+        0 0 20px #8d19ff;
+
+}
+
+
+.right-panel .header p {
+
+    color: #c0afc6;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ==========================================
+   CHAT
+========================================== */
+
+.chat {
+
+    flex: 1;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(18, 5, 25, 0.78),
+            rgba(5, 2, 8, 0.82)
+        );
+
+    border:
+        1px solid
+        rgba(141, 25, 255, 0.55);
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    box-shadow:
+
+        inset 0 0 18px
+        rgba(141, 25, 255, 0.15),
+
+        0 0 20px
+        rgba(100, 0, 180, 0.12);
+
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.chat::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+.chat::-webkit-scrollbar-track {
+
+    background: #060606;
+
+    border-radius: 20px;
+
+}
+
+
+.chat::-webkit-scrollbar-thumb {
+
+    background:
+
+        linear-gradient(
+            #6e00ff,
+            #b100ff
+        );
+
+    border-radius: 20px;
+
+}
+
+
+.chat::-webkit-scrollbar-thumb:hover {
+
+    background: #d05cff;
+
+}
+
+
+.chat {
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #8d19ff
+        #060606;
+
+}
+
+
+/* ==========================================
+   MENSAGENS
+========================================== */
+
+.message {
+
+    max-width: 82%;
+
+    padding: 16px 20px;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    word-wrap: break-word;
+
+    animation:
+        aparecer .35s ease;
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   FLOW AI
+========================================== */
+
+.ai {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(110, 0, 160, 0.30),
+            rgba(35, 5, 45, 0.72)
+        );
+
+    border-left:
+        4px solid #a900ff;
+
+    color: #f4edf7;
+
+    margin-right: auto;
+
+}
+
+
+/* ==========================================
+   USUÁRIO
+========================================== */
+
+.user {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(30, 10, 40, 0.88),
+            rgba(15, 5, 20, 0.92)
+        );
+
+    border-right:
+        4px solid #c000ff;
+
+    color: white;
+
+    margin-left: auto;
+
+    text-align: right;
+
+}
+
+
+/* ==========================================
+   ÁREA DE PERGUNTA
+========================================== */
+
+.input-area {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+}
+
+
+#pergunta {
+
+    flex: 1;
+
+    height: 58px;
+
+    padding:
+        0 22px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background:
+        rgba(15, 5, 20, 0.88);
+
+    color: white;
+
+    font-size: 16px;
+
+    border:
+        1px solid
+        rgba(141, 25, 255, 0.5);
+
+    transition: .3s;
+
+}
+
+
+#pergunta::placeholder {
+
+    color: #8f7b96;
+
+}
+
+
+#pergunta:focus {
+
+    border-color: #b14cff;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(141, 25, 255, 0.35);
+
+}
+
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+#enviar {
+
+    height: 58px;
+
+    padding:
+        0 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    background:
+
+        linear-gradient(
+            45deg,
+            #6e00ff,
+            #b100ff
+        );
+
+    box-shadow:
+
+        0 0 18px
+        rgba(141, 25, 255, 0.45);
+
+    transition: .25s;
+
+}
+
+
+#enviar:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(141, 25, 255, 0.75),
+
+        0 0 45px
+        rgba(141, 25, 255, 0.25);
+
+}
+
+
+#enviar:active {
+
+    transform:
+        scale(.96);
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    body {
+
+        overflow: auto;
+
+    }
+
+    .background {
+
+        min-height: 100vh;
+
+        height: auto;
+
+        padding: 20px 0;
+
+    }
+
+    .container {
+
+        flex-direction: column;
+
+        width: 95%;
+
+        height: auto;
+
+        min-height: 95vh;
+
+    }
+
+    .left-panel {
+
+        width: 100%;
+
+        min-height: 380px;
+
+        padding: 20px;
+
+    }
+
+    .right-panel {
+
+        width: 100%;
+
+        min-height: 550px;
+
+    }
+
+    .mascote {
+
+        width: 60%;
+
+        max-height: 280px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .container {
+
+        border-radius: 20px;
+
+    }
+
+    .left-panel {
+
+        min-height: 330px;
+
+    }
+
+    .left-panel h1 {
+
+        font-size: 40px;
+
+        letter-spacing: 3px;
+
+    }
+
+    .right-panel {
+
+        padding: 20px;
+
+    }
+
+    .right-panel h2 {
+
+        font-size: 28px;
+
+    }
+
+    .input-area {
+
+        flex-direction: column;
+
+    }
+
+    #pergunta {
+
+        width: 100%;
+
+    }
+
+    #enviar {
+
+        width: 100%;
+
+    }
+
+    .message {
+
+        max-width: 90%;
+
+    }
+
+}
